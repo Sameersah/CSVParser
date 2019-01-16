@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Coloumn {
-	
+
 	protected Coloumn() {
 		rows = new ArrayList<Row>();
 	}
@@ -22,29 +22,34 @@ public class Coloumn {
 	public Row getRow(int index) {
 		return rows.get(index);
 	}
-	
-	public void addRow(Row row) {
+
+	protected void addRow(Row row) {
 		rows.add(row);
 	}
-	
+
 	public Row getRow(String data) {
-		 
-		for(Row row: rows) {
-			if(row.getData().equalsIgnoreCase(data)) {
+
+		for (Row row : rows) {
+			if (row.getData().equalsIgnoreCase(data)) {
 				return row;
 			}
 		}
-		 return null;
+		return null;
 	}
-	
+
 	public Row updateRow(String data) {
-		for(Row row: rows) {
-			if(row.getData().equalsIgnoreCase(data)) {
+		for (Row row : rows) {
+			if (row.getData().equalsIgnoreCase(data)) {
 				return row;
 			}
 		}
-		 return null;
+		return null;
 	}
 	
-	
+	public void addRow(int index, String data) {
+		Row row = new Row();
+		row.setData(data);
+		rows.add(index,row);
+	}
+
 }

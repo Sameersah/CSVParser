@@ -1,4 +1,8 @@
-package com.lordabbett.csvParser.csvParser;
+package com.lordabbett.csvTester;
+
+import com.lordabbett.csvParser.csvParser.CSVParser;
+import com.lordabbett.csvParser.csvParser.Coloumn;
+import com.lordabbett.csvParser.csvParser.Table;
 
 public class CSVDriver {
 
@@ -17,14 +21,21 @@ public class CSVDriver {
 				"10,Jeffrey,Willis,42,Maji Junction,Zejokaba,KY,48778,$9783.00,BLUE,03/13/2042\r\n" + 
 				"";
 		
+		System.out.println(csvString);
+		//------------
 		
 		CSVParser parser = new CSVParser();
 		Table table = parser.mapCSVToTable(csvString);
-		 table.updateColoumn("first").updateRow("Manuel").setData("sameer sah");
+		 table.updateColoumn("first").updateRow("Manuel").setData("deepak sah");
 		 String modifiedCSV =   parser.mapTableToCSV(table);
+		 
+		
+		 
+		//-------------
+		 
 		 System.out.println(modifiedCSV);
 		
-		
+		 //To do - add new coloumns
 		
 		
 		   

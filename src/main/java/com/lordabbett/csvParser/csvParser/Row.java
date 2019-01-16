@@ -3,7 +3,7 @@ package com.lordabbett.csvParser.csvParser;
 public class Row {
 
 	String data;
-	
+
 	protected Row() {
 		data = new String();
 	}
@@ -15,5 +15,5 @@ public class Row {
 	public void setData(String data) {
 		this.data = data;
 	}
-	
+
 }
