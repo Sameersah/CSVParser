@@ -5,7 +5,10 @@ public class CSVParser {
 	public Table mapCSVToTable(String csvString) {
 		Table table = new Table();
 		String rows[] = csvString.split("\r\n");
-
+		for(int i=0;i<rows.length;i++) {
+		//	System.out.println(rows[i]);
+		}
+         //new logic
 		for (int i = 0; i < rows.length; i++) {
 			String cells[] = rows[i].split(",");
 			Row row;

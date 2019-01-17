@@ -5,8 +5,15 @@ import java.util.List;
 
 public class Coloumn {
 
-	protected Coloumn() {
+	public Coloumn() {
 		rows = new ArrayList<Row>();
+	}
+	
+	public Coloumn(String header) {
+		rows = new ArrayList<Row>();
+		Row row = new Row();
+		row.setData(header);
+		rows.add(row);
 	}
 
 	List<Row> rows;
@@ -23,7 +30,7 @@ public class Coloumn {
 		return rows.get(index);
 	}
 
-	protected void addRow(Row row) {
+	public void addRow(Row row) {
 		rows.add(row);
 	}
 

@@ -4,7 +4,7 @@ public class Row {
 
 	String data;
 
-	protected Row() {
+	public Row() {
 		data = new String();
 	}
 

@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Table {
 
-	protected Table() {
+	public Table() {
 		coloumns = new ArrayList<Coloumn>();
 	}
 
@@ -55,6 +55,11 @@ public class Table {
 			}
 		}
 		return null;
+	}
+	
+	public void addColoumn(int index, Coloumn coloumn) {
+		coloumns.add(index,coloumn);
+		
 	}
 
 }
