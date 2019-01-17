@@ -1,5 +1,9 @@
 package com.lordabbett.csvParser.csvParser;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class CSVParser {
 
 	public Table mapCSVToTable(String csvString) {
@@ -10,7 +14,7 @@ public class CSVParser {
 		}
          //new logic
 		for (int i = 0; i < rows.length; i++) {
-			String cells[] = rows[i].split(",");
+			String cells[] = rows[i].split(",(?=(?:[^\\\"]*\\\"[^\\\"]*\\\")*[^\\\"]*$)");
 			Row row;
 			Coloumn col;
 			for (int j = 0; j < cells.length; j++) {
@@ -40,6 +44,7 @@ public class CSVParser {
 		return table;
 	}
 
+	
 	public String mapTableToCSV(Table table) {
 		String modifiedCSVString = "";
 		int rowCount = table.getColoumn(0).getRows().size();

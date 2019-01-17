@@ -44,40 +44,52 @@ public class CSVDriver {
 		
 		 //To do - add new coloumns
 		
-		System.out.println(CSVConstants.csv1);
+//		System.out.println(CSVConstants.csv1);
+//		CSVParser parser = new CSVParser();
+//		Table table = parser.mapCSVToTable(CSVConstants.csv1);
+//		Coloumn col = table.getColoumn("first");
+		
+//		Coloumn col3 = table.getColoumn("age");
+//		Coloumn col2 = table.getColoumn("city");
+//		Coloumn col4 = new Coloumn("Language");
+//		Coloumn col5 = table.getColoumn("state");
+		
+//		for(int i=1;i<col.getRows().size();i++) {
+//			String data = col.getRow(i).getData();
+//			String language = data.substring(data.indexOf("_")+1);
+//			col4.addRow(i, language);
+//		}
+		
+		
+		
+//		Table table2 = new Table();
+//		table2.addColoumn(0, col);
+//		table2.addColoumn(1, col2);
+//		table2.addColoumn(2, col3);
+//		table2.addColoumn(3, col4);
+//		table2.addColoumn(4, col5);
+//		String modifiedCsv = parser.mapTableToCSV(table2);
+		
+//		System.out.println(modifiedCsv);
+		
+//-------------------------------
+		System.out.println(CSVConstants.csv2);
+		System.out.println(CSVConstants.csv2.contains("\",\""));
 		CSVParser parser = new CSVParser();
-		Table table = parser.mapCSVToTable(CSVConstants.csv1);
-		Coloumn col = table.getColoumn("first");
+		Table table3 = parser.mapCSVToTable(CSVConstants.csv2);
+
+		System.out.println("---");
+		System.out.println(table3.getColoumn("path").getRow(2).getData());
+		String modifiedcsv2=parser.mapTableToCSV(table3);
+		System.out.println(modifiedcsv2);
 		
-		Coloumn col3 = table.getColoumn("age");
-		Coloumn col2 = table.getColoumn("city");
-		Coloumn col4 = new Coloumn("Language");
-		Coloumn col5 = table.getColoumn("state");
+		Coloumn content = table3.getColoumn("content");
+		Table table4 = new Table();
+		table4.addColoumn(0, content);
 		
-		for(int i=1;i<col.getRows().size();i++) {
-			String data = col.getRow(i).getData();
-			String language = data.substring(data.indexOf("_")+1);
-			col4.addRow(i, language);
-		}
-		
+		System.out.println(parser.mapTableToCSV(table4));
 		
 		
-		Table table2 = new Table();
-		table2.addColoumn(0, col);
-		table2.addColoumn(1, col2);
-		table2.addColoumn(2, col3);
-		table2.addColoumn(3, col4);
-		table2.addColoumn(4, col5);
-		String modifiedCsv = parser.mapTableToCSV(table2);
-		
-		System.out.println(modifiedCsv);
-		
-		//-------------------------------
-		//System.out.println(CSVConstants.csv2);
-	//	CSVParser parser = new CSVParser();
-	//	Table table3 = parser.mapCSVToTable(CSVConstants.csv2);
-	//	String modifiedcsv2=parser.mapTableToCSV(table3);
-	//	System.out.println(modifiedcsv2);
 		   
 	}
 }
